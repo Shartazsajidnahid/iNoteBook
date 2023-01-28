@@ -7,7 +7,11 @@ const Notes = () => {
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
     useEffect(() => {
-        getNotes()
+        if(localStorage.getItem('token'))
+            getNotes();
+        else{
+            
+        }
         // eslint-disable-next-line
     }, [])
     const ref = useRef(null)
